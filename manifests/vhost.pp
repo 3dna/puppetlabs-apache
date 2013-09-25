@@ -185,7 +185,7 @@ define apache::vhost(
 
 
   # Is apache::mod::passenger enabled (or apache::mod['passenger'])
-  $passenger_enabled = (defined(Apache::Mod['passenger']) or defined(Apache::Mod['passengerenterprise']))
+  $passenger_enabled = defined(Apache::Mod['passenger'])
 
   # Define log file names
   if $access_log_file {
@@ -282,7 +282,7 @@ define apache::vhost(
 
   # Load mod_passenger if needed and not yet loaded
   if $rack_base_uris {
-    if (! defined(Class['apache::mod::passenger']) and ! defined(Class['apache::mod::passengerenterprise'])) {
+    if ! defined(Class['apache::mod::passenger']) {
       include apache::mod::passenger
     }
   }
