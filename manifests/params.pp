@@ -77,7 +77,8 @@ class apache::params {
       'xsendfile'  => 'mod_xsendfile',
     }
     $mod_libs             = {
-      'php5' => 'libphp5.so',
+      'php5'                => 'libphp5.so',
+      'passengerenterprise' => 'mod_passenger.so',
     }
     $conf_template        = 'apache/httpd.conf.erb'
     $keepalive            = 'Off'
