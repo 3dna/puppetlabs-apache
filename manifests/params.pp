@@ -123,8 +123,7 @@ class apache::params {
       'xsendfile'           => 'libapache2-mod-xsendfile',
     }
     $mod_libs         = {
-      'php5'                => 'libphp5.so',
-      'passengerenterprise' => 'mod_passenger.so',
+      'php5' => 'libphp5.so',
     }
     $conf_template     = 'apache/httpd.conf.erb'
     $keepalive         = 'Off'
