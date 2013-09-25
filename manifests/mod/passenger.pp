@@ -10,7 +10,7 @@ class apache::mod::passenger (
   $passenger_max_pool_size        = undef,
   $package                        = undef,
 ) {
-  apache::mod { 'passenger': package => undef } 
+  apache::mod { 'passenger': package => $package } 
   # Template uses:
   # - $passenger_root
   # - $passenger_ruby
