@@ -2,14 +2,10 @@
 
   ## Proxy rules
   ProxyRequests Off
-  <Proxy *>
-    Order deny,allow
-    Allow from all
-  </Proxy>
 <%- end -%>
 <% [@proxy_pass].flatten.compact.each do |proxy| %>
   ProxyPass <%= proxy['path'] %> <%= proxy['url'] %>
-  <Location <%= proxy['path']%>/>
+  <Location <%= proxy['path']%>>
     ProxyPassReverse /
   </Location>
 <% end %>
