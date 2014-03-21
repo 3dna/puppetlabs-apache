@@ -15,7 +15,7 @@ class apache::mod::passenger (
 ) {
   if $::osfamily == 'FreeBSD' {
     ::apache::mod { 'passenger':
-      lib_path => "${passenger_root}/buildout/apache2"
+      lib_path => "${passenger_root}/buildout/apache2",
       package  => $package,
     }
   } else {
